@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { useState } from 'react'
 import './App.css';
+import Comp1 from './Comp1.jsx'
+import { Comp2 } from './Comp2'
 
-function App() {
+const App = () => {
+
+  const [cont1, setCont1] = useState(1)
+  const [cont2, setCont2] = useState(1)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>olá</div>
+      <Comp1 value={cont1} />
+      <button onClick={()=>setCont1(cont1+ 1)}>INCREMENT 1</button>
+      <Comp2 value={cont2} />
+      <button onClick={()=>setCont2(cont2 + 1)}>INCREMENT 2</button>
     </div>
   );
 }
